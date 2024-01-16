@@ -1,0 +1,10 @@
+name: MobileAIBench
+dependencies:
+- python
+- pip
+- bazel
+- cmake
+- pyyaml
+- filelock
+- pip:
+  - sh
