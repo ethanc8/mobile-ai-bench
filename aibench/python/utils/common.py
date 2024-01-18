@@ -17,8 +17,8 @@ import six
 import os
 import zipfile
 import tarfile
-from six.moves import urllib
-
+# from six.moves import urllib
+import urllib
 
 ################################
 # log

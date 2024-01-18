@@ -2,9 +2,10 @@ name: MobileAIBench
 dependencies:
 - python
 - pip
-- bazel
+- bazel=0.13.0
 - cmake
-- pyyaml
+- pyyaml=3.13
 - filelock
+- pandas # for report/csv_to_html.py
 - pip:
   - sh

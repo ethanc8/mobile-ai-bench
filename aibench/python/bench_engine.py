@@ -113,8 +113,8 @@ def bazel_build(target, abi, executor, device_types):
             "--config",
             ABI_TOOLCHAIN_CONFIG[abi],
             "--cpu=%s" % abi,
-            "--action_env=ANDROID_NDK_HOME=%s"
-            % os.environ["ANDROID_NDK_HOME"],
+            # "--action_env=ANDROID_NDK_HOME=%s"
+            # % os.environ["ANDROID_NDK_HOME"],
         )
     bazel_args += ("--define", "%s=true"
                    % base_pb2.ExecutorType.Name(executor).lower())
@@ -180,10 +180,10 @@ def prepare_device_env(device, abi, device_bin_path, executor):
 
         if snpe_lib_path:
             device.push(snpe_lib_path, device_bin_path)
-            libgnustl_path = os.environ["ANDROID_NDK_HOME"] + \
-                ("/sources/cxx-stl/llvm-libc++/libs/%s/" % abi) + \
-                "libc++_shared.so"
-            device.push(libgnustl_path, device_bin_path)
+            # libgnustl_path = os.environ["ANDROID_NDK_HOME"] + \
+            #     ("/sources/cxx-stl/llvm-libc++/libs/%s/" % abi) + \
+            #     "libc++_shared.so"
+            # device.push(libgnustl_path, device_bin_path)
 
         device.push("bazel-mobile-ai-bench/external/snpe/lib/dsp",
                     device_bin_path)
@@ -212,10 +212,10 @@ def prepare_device_env(device, abi, device_bin_path, executor):
 
         if mace_lib_path:
             device.push(mace_lib_path, device_bin_path)
-            libgnustl_path = os.environ["ANDROID_NDK_HOME"] + \
-                ("/sources/cxx-stl/llvm-libc++/libs/%s/" % abi) + \
-                "libc++_shared.so"
-            device.push(libgnustl_path, device_bin_path)
+            # libgnustl_path = os.environ["ANDROID_NDK_HOME"] + \
+            #     ("/sources/cxx-stl/llvm-libc++/libs/%s/" % abi) + \
+            #     "libc++_shared.so"
+            # device.push(libgnustl_path, device_bin_path)
         if mace_dsp_lib_path:
             device.push(mace_dsp_lib_path, device_bin_path)
 
@@ -507,9 +507,10 @@ def bench_run(abi,
                     print(cmd_run + ' ' + args)
                     device_output = device.exec_command("%s %s" %
                                                         (cmd_run, args),
-                                                        _fg=True)
+                                                        _in=sys.stdin, _out=sys.stdout, _err=sys.stderr)
+                                                        # _fg=True)
                 except Exception as e:
-                    print("stdout:" + e.stdout + " stderr:" + e.stderr)
+                    print("stdout:" + str(e.stdout) + " stderr:" + str(e.stderr))
                     sys.exit(1)
                 elapse_minutes = (time.time() - start_time) / 60
             print("Elapse time: %f minutes." % elapse_minutes)

@@ -2,9 +2,11 @@
 tensorflow-2.4.1.zip: https://cnbj1.fds.api.xiaomi.com/aibench/third_party/tensorflow-2.4.1.zip
 tensorflow-2.4.1.zip_md5_checksum: 3674cf2ace8ccab67ca89726b8b12980
 MNN-1.1.1.zip: https://cnbj1.fds.api.xiaomi.com/aibench/third_party/MNN-1.1.1.zip
-MNN-1.1.1.zip_md5_checksum: 42c8cb30c0683bd1c6e8c7c8a7a59510
+# MNN-1.1.1.zip_md5_checksum: 42c8cb30c0683bd1c6e8c7c8a7a59510
+MNN-1.1.1.zip_md5_checksum: 9ba88dbc7a9d088e16b34cd49ef98711
 mace-1.0.4.zip: https://cnbj1.fds.api.xiaomi.com/aibench/third_party/mace-1.0.4.zip
-mace-1.0.4.zip_md5_checksum: 77c8ac455e1424ec1cd740f3f76ac427
+mace-1.0.4.zip_md5_checksum: 224af3e9e18a0c9b91bbb135a8ba0024
+# mace-1.0.4.zip_md5_checksum: 77c8ac455e1424ec1cd740f3f76ac427
 
 # inputs:
 imagenet_less.zip: https://cnbj1-fds.api.xiaomi.net/aibench/inputs/imagenet_less.zip

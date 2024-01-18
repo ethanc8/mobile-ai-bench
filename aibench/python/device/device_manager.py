@@ -54,7 +54,7 @@ class DeviceManager:
     def list_devices(self,
                      yml='generic-mobile-devices/devices_for_ai_bench.yml'):
         devices_list = []
-        devices_list.extend(self.list_adb_device())
+        # devices_list.extend(self.list_adb_device())
         if os.path.exists(yml):
             devices_list.extend(self.list_ssh_device(yml))
         else:

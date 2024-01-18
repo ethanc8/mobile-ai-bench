@@ -10,6 +10,13 @@ third_party/mace/include/
 third_party/mace/lib/
 third_party/tflite/flatbuffers/
 third_party/tflite/tensorflow/
+third_party/tflite/absl/
+third_party/mnn/*/
+report/prepare_report.html
+report/run_report.html
+report/precision_report.html
+generic-mobile-devices/devices_for_ai_bench.yml
+build.sh
 cmake-build-debug/
 dataset/
 CMakeLists.txt

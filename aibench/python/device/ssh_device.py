@@ -39,6 +39,7 @@ class SshDevice(Device):
         except sh.ErrorReturnCode as e:
             six.print_('device connect failed, '
                        'please check your authentication',
+                       'Error msg {}'.format(e),
                        file=sys.stderr)
             raise e
 
